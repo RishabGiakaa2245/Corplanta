@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Global Colors */
+    --global-bg-1: #0000008e;
+    --global-bg-2: #1c2833;
+    --global-bg-3: #c27d0e;
+    --global-bg-4: #faca88;
+    --global-bg-5: #fdebd0;
+    --global-bg-6: #fe9f11;
+    --global-bg-7: #ffe1b7;
+    --global-bg-8: #ffeed7;
+    --global-bg-9: #ffffff;
+    --global-bg-10: #ffffff66;
+    --global-text-1: #000000;
+    --global-text-2: #0000008e;
+    --global-text-3: #1c001f;
+    --global-text-4: #1c283333;
+    --global-text-5: #ffffff;
+    --global-text-6: #ffffff8e;
+    --global-text-7: #ffffffcc;
+    --global-text-8: #f39712;
+
+    /* Button Colors */
+    --button-bg-1: #00000033;
+    --button-bg-2: #f39712;
+    --button-text-1: #f39712;
+
+    /* Slider Colors */
+    --slider-text-1: #9a9b9d;
+
+    /* Footer Colors */
+    --footer-bg-1: #ffffff33;
+    --footer-text-1: #f7c600;
+  }
+}
+
+@layer utilities {
+  /* Global */
+  .bg-global-1 {
+    background-color: var(--global-bg-1);
+  }
+  .bg-global-2 {
+    background-color: var(--global-bg-2);
+  }
+  .bg-global-3 {
+    background-color: var(--global-bg-3);
+  }
+  .bg-global-4 {
+    background-color: var(--global-bg-4);
+  }
+  .bg-global-5 {
+    background-color: var(--global-bg-5);
+  }
+  .bg-global-6 {
+    background-color: var(--global-bg-6);
+  }
+  .bg-global-7 {
+    background-color: var(--global-bg-7);
+  }
+  .bg-global-8 {
+    background-color: var(--global-bg-8);
+  }
+  .bg-global-9 {
+    background-color: var(--global-bg-9);
+  }
+  .bg-global-10 {
+    background-color: var(--global-bg-10);
+  }
+  .text-global-1 {
+    color: var(--global-text-1);
+  }
+  .text-global-2 {
+    color: var(--global-text-2);
+  }
+  .text-global-3 {
+    color: var(--global-text-3);
+  }
+  .text-global-4 {
+    color: var(--global-text-4);
+  }
+  .text-global-5 {
+    color: var(--global-text-5);
+  }
+  .text-global-6 {
+    color: var(--global-text-6);
+  }
+  .text-global-7 {
+    color: var(--global-text-7);
+  }
+  .text-global-8 {
+    color: var(--global-text-8);
+  }
+
+  /* Button */
+  .bg-button-1 {
+    background-color: var(--button-bg-1);
+  }
+  .bg-button-2 {
+    background-color: var(--button-bg-2);
+  }
+  .text-button-1 {
+    color: var(--button-text-1);
+  }
+
+  /* Slider */
+  .text-slider-1 {
+    color: var(--slider-text-1);
+  }
+
+  /* Footer */
+  .bg-footer-1 {
+    background-color: var(--footer-bg-1);
+  }
+  .text-footer-1 {
+    color: var(--footer-text-1);
+  }
+
+  /* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+}
+
