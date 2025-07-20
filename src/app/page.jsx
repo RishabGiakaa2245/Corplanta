@@ -572,7 +572,7 @@ export default function HomePage() {
             </div>
           </div>
         </motion.div>
-        {/* Jurisdictions Section */}
+        {/* Jurisdictions Section littel change  */} 
         <motion.div 
           className="w-full lg:max-w-[1233px] mx-auto px-4 sm:px-6 lg:px-[104px] flex flex-col gap-12 lg:gap-[50px] items-center bg-[url('/images/img_1019996_ojo4yq0.png')] bg-cover bg-no-repeat bg-center"
           ref={jurisdictionsAnimation.ref}
