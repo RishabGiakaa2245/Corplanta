@@ -581,7 +581,7 @@ export default function HomePage() {
           variants={staggerContainer}
         >
           <motion.h2 
-            variants={fadeInUp}
+            variants={fadeInUp}  
             className="text-4xl sm:text-5xl lg:text-[50px] font-normal leading-tight lg:leading-[74px] text-center text-[#000000] font-baskerville"
           >
             Strategic Offshore Jurisdictions - <br />
