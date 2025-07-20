@@ -574,7 +574,7 @@ export default function HomePage() {
         </motion.div>
         {/* Jurisdictions Section */}
         <motion.div 
-          className="w-full lg:max-w-[1233px] mx-auto px-4 sm:px-6 lg:px-[104px] flex flex-col gap-12 lg:gap-[50px] items-center bg-[url('/images/img_1019996_ojo4yq0.png')] bg-contain bg-no-repeat bg-center"
+          className="w-full lg:max-w-[1233px] mx-auto px-4 sm:px-6 lg:px-[104px] flex flex-col gap-12 lg:gap-[50px] items-center bg-[url('/images/img_1019996_ojo4yq0.png')] bg-cover bg-no-repeat bg-center"
           ref={jurisdictionsAnimation.ref}
           initial="initial"
           animate={jurisdictionsAnimation.controls}
@@ -764,7 +764,7 @@ export default function HomePage() {
                   </motion.h3>
                 </motion.div>
                 <motion.div 
-                  className="w-full lg:w-[44%] flex justify-center lg:justify-end"
+                  className=" lg:w-[44%] flex lg:justify-end self-end"
                   initial={{ scale: 0, rotate: -180 }}
                   whileInView={{ scale: 1, rotate: 0 }}
                   transition={{ 
@@ -838,7 +838,7 @@ export default function HomePage() {
                   </motion.h3>
                 </motion.div>
                 <motion.div 
-                  className="w-32 h-full lg:w-[164px] flex items-end justify-center"
+                  className="w-32 h-full lg:w-[164px] flex items-end justify-center self-end"
                   initial={{ scale: 0, rotate: 180 }}
                   whileInView={{ scale: 1, rotate: 0 }}
                   transition={{ 
@@ -914,7 +914,7 @@ export default function HomePage() {
                   </motion.h3>
                 </motion.div>
                 <motion.div 
-                  className="w-32 lg:w-[50%] flex justify-center"
+                  className="w-32 lg:w-[50%] flex justify-center self-end"
                   initial={{ scale: 0, rotate: -180 }}
                   whileInView={{ scale: 1, rotate: 0 }}
                   transition={{ 
@@ -988,7 +988,7 @@ export default function HomePage() {
                   </motion.h3>
                 </motion.div>
                 <motion.div
-                  className="absolute top-4 lg:top-[16px] right-4 lg:right-[8px] w-48 lg:w-[258px] h-32 lg:h-[196px] bg-cover bg-center flex items-start justify-end p-2 lg:p-[10px]"
+                  className=" w-48 lg:w-[258px] h-32 lg:h-[196px] bg-cover bg-center flex items-start justify-end p-2 lg:p-[10px] self-end"
                   style={{ backgroundImage: "url('/images/img_group_11.svg')" }}
                   initial={{ opacity: 0, scale: 0, x: 50 }}
                   whileInView={{ opacity: 1, scale: 1, x: 0 }}
@@ -1594,7 +1594,7 @@ export default function HomePage() {
         </motion.div>
         {/* Testimonials Section */}
         <motion.div
-          className="w-full h-[400px] lg:h-[740px] bg-cover bg-center relative flex items-center justify-center"
+          className="w-full h-[600px] lg:h-[740px] bg-cover bg-center relative flex items-center justify-center"
           style={{ backgroundImage: "url('/images/img_building_8.png')" }}
           initial="hidden"
           whileInView="visible"
