@@ -572,16 +572,16 @@ export default function HomePage() {
             </div>
           </div>
         </motion.div>
-        {/* Jurisdictions Section littel change  */} 
+        {/* Jurisdictions Section */}
         <motion.div 
-          className="w-full lg:max-w-[1233px] mx-auto px-4 sm:px-6 lg:px-[104px] flex flex-col gap-12 lg:gap-[50px] items-center bg-[url('/images/img_1019996_ojo4yq0.png')] bg-cover bg-no-repeat bg-center"
+          className="w-full lg:max-w-[1233px] mx-auto px-4 sm:px-6 lg:px-[104px] flex flex-col gap-12 lg:gap-[50px] items-center bg-[url('/images/img_1019996_ojo4yq0.png')] bg-cover sm:bg-contain bg-no-repeat bg-center"
           ref={jurisdictionsAnimation.ref}
           initial="initial"
           animate={jurisdictionsAnimation.controls}
           variants={staggerContainer}
         >
           <motion.h2 
-            variants={fadeInUp}  
+            variants={fadeInUp}
             className="text-4xl sm:text-5xl lg:text-[50px] font-normal leading-tight lg:leading-[74px] text-center text-[#000000] font-baskerville"
           >
             Strategic Offshore Jurisdictions - <br />
