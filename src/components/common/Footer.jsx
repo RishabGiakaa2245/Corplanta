@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Footer = ({ className = '', ...props }) => {
   const legalLinks = [
@@ -26,105 +27,352 @@ const Footer = ({ className = '', ...props }) => {
   ];
 
   return (
-    <footer 
+    <motion.footer 
       className={`w-full bg-[#1c2833] px-4 sm:px-6 lg:px-[104px] py-12 lg:py-[46px] ${className}`}
       {...props}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.8,
+            staggerChildren: 0.2
+          }
+        }
+      }}
     >
-      <div className="flex flex-col gap-12 lg:gap-[48px] w-full">
+      <motion.div 
+        className="flex flex-col gap-12 lg:gap-[48px] w-full"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3 }
+          }
+        }}
+      >
         {/* Main Footer Content */}
-        <div className="flex flex-col lg:flex-row justify-between items-start w-full gap-8 lg:gap-0">
+        <motion.div 
+          className="flex flex-col lg:flex-row justify-between items-start w-full gap-8 lg:gap-0"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.6 }
+            }
+          }}
+        >
           {/* Company Info */}
-          <div className="flex flex-col gap-5 lg:gap-[20px] w-full lg:w-[32%]">
-            <h2 className="text-3xl sm:text-4xl lg:text-[48px] font-bold leading-tight lg:leading-[56px] text-left uppercase text-[#f7c600] font-helvetica">
+          <motion.div 
+            className="flex flex-col gap-5 lg:gap-[20px] w-full lg:w-[32%]"
+            variants={{
+              hidden: { opacity: 0, x: -30 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15,
+                  duration: 0.6
+                }
+              }
+            }}
+          >
+            <motion.h2 
+              className="text-3xl sm:text-4xl lg:text-[48px] font-bold leading-tight lg:leading-[56px] text-left uppercase text-[#f7c600] font-helvetica"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
               Corplanta
-            </h2>
-            <p className="text-sm sm:text-base lg:text-[16px] font-normal leading-6 lg:leading-[28px] text-left text-[#ffffff8e] font-helvetica">
+            </motion.h2>
+            <motion.p 
+              className="text-sm sm:text-base lg:text-[16px] font-normal leading-6 lg:leading-[28px] text-left text-[#ffffff8e] font-helvetica"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.2 }
+                }
+              }}
+            >
               Corplanta International Services Ltd. Licensed Corporate Service Provider Crypto & Traditional Business Specialists Regulatory Compliance Certified
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Links Section */}
-          <div className="flex flex-col sm:flex-row justify-between items-start w-full lg:w-[58%] gap-8 sm:gap-4 lg:gap-0 mt-0 lg:mt-1">
+          <motion.div 
+            className="flex flex-col sm:flex-row justify-between items-start w-full lg:w-[58%] gap-8 sm:gap-4 lg:gap-0 mt-0 lg:mt-1"
+            variants={{
+              hidden: { opacity: 0, x: 30 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15,
+                  duration: 0.6,
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+          >
             {/* Legal Links */}
-            <div className="flex flex-col gap-6 lg:gap-[26px] w-full sm:w-[48%]">
-              <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica">
+            <motion.div 
+              className="flex flex-col gap-6 lg:gap-[26px] w-full sm:w-[48%]"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6 }
+                }
+              }}
+            >
+              <motion.h3 
+                className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica"
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
                 Legal Links
-              </h3>
+              </motion.h3>
               <ul className="flex flex-col gap-3 lg:gap-[12px]">
                 {legalLinks.map((link, index) => (
-                  <li key={index}>
-                    <button 
+                  <motion.li 
+                    key={index}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: {
+                        opacity: 1,
+                        x: 0,
+                        transition: { delay: index * 0.1 }
+                      }
+                    }}
+                  >
+                    <motion.button 
                       role="menuitem"
                       className="text-sm sm:text-base lg:text-[16px] font-normal leading-[19px] text-left text-[#ffffff] hover:text-[#f7c600] transition-colors duration-200 font-helvetica"
+                      whileHover={{ x: 10 }}
                     >
                       {link}
-                    </button>
-                  </li>
+                    </motion.button>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Company Links */}
-            <div className="flex flex-col gap-6 lg:gap-[26px] w-full sm:w-[34%]">
-              <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica">
+            <motion.div 
+              className="flex flex-col gap-6 lg:gap-[26px] w-full sm:w-[34%]"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6, delay: 0.2 }
+                }
+              }}
+            >
+              <motion.h3 
+                className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica"
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
                 Company
-              </h3>
+              </motion.h3>
               <ul className="flex flex-col gap-3 lg:gap-[12px]">
                 {companyLinks.map((link, index) => (
-                  <li key={index}>
-                    <button 
+                  <motion.li 
+                    key={index}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: {
+                        opacity: 1,
+                        x: 0,
+                        transition: { delay: index * 0.1 }
+                      }
+                    }}
+                  >
+                    <motion.button 
                       role="menuitem"
                       className="text-sm sm:text-base lg:text-[16px] font-normal leading-[19px] text-left text-[#ffffff] hover:text-[#f7c600] transition-colors duration-200 font-helvetica"
+                      whileHover={{ x: 10 }}
                     >
                       {link}
-                    </button>
-                  </li>
+                    </motion.button>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Social Media */}
-            <div className="flex flex-col gap-6 lg:gap-[26px] w-full sm:w-auto">
-              <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica">
+            <motion.div 
+              className="flex flex-col gap-6 lg:gap-[26px] w-full sm:w-auto"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6, delay: 0.4 }
+                }
+              }}
+            >
+              <motion.h3 
+                className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica"
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+              >
                 Social Media
-              </h3>
+              </motion.h3>
               <ul className="flex flex-col gap-3 lg:gap-[12px] items-start">
                 {socialLinks.map((link, index) => (
-                  <li key={index}>
-                    <button 
+                  <motion.li 
+                    key={index}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: {
+                        opacity: 1,
+                        x: 0,
+                        transition: { delay: index * 0.1 }
+                      }
+                    }}
+                  >
+                    <motion.button 
                       role="menuitem"
                       className="text-sm sm:text-base lg:text-[16px] font-normal leading-[19px] text-left text-[#ffffff] hover:text-[#f7c600] transition-colors duration-200 font-helvetica"
+                      whileHover={{ x: 10, scale: 1.05 }}
                     >
                       {link}
-                    </button>
-                  </li>
+                    </motion.button>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+
 
         {/* Disclaimer Section */}
-        <div className="flex flex-col gap-8 lg:gap-[32px] w-full">
-          <div className="flex flex-col gap-4 lg:gap-[16px] w-full">
-            <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica">
+        <motion.div 
+          className="flex flex-col gap-8 lg:gap-[32px] w-full"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: "spring",
+                stiffness: 60,
+                damping: 12,
+                delay: 0.4,
+                staggerChildren: 0.2
+              }
+            }
+          }}
+        >
+          <motion.div 
+            className="flex flex-col gap-4 lg:gap-[16px] w-full"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6 }
+              }
+            }}
+          >
+            <motion.h3 
+              className="text-lg sm:text-xl lg:text-[22px] font-bold leading-6 lg:leading-[26px] text-left text-[#ffffff] font-helvetica"
+              variants={{
+                hidden: { opacity: 0, x: -20 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }
+                }
+              }}
+            >
               Disclaimer
-            </h3>
-            <p className="text-sm sm:text-base lg:text-[16px] font-normal leading-6 lg:leading-[28px] text-left text-[#ffffff8e] font-helvetica">
+            </motion.h3>
+            <motion.p 
+              className="text-sm sm:text-base lg:text-[16px] font-normal leading-6 lg:leading-[28px] text-left text-[#ffffff8e] font-helvetica"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 50,
+                    damping: 15,
+                    delay: 0.2
+                  }
+                }
+              }}
+            >
               Professional incorporation services provided in full compliance with applicable laws and regulations including cryptocurrency and digital asset legislation. This information is for general guidance only. Specific advice should be sought for individual circumstances. All proposals are customized based on client requirements, business models, and jurisdictional specifications for both traditional and digital asset businesses.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Divider Line */}
-          <div className="h-[1px] w-full bg-[#ffffff33]"></div>
+          <motion.div 
+            className="h-[1px] w-full bg-[#ffffff33]"
+            variants={{
+              hidden: { scaleX: 0, opacity: 0 },
+              visible: {
+                scaleX: 1,
+                opacity: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 50,
+                  damping: 15,
+                  delay: 0.3
+                }
+              }
+            }}
+            style={{ originX: 0 }}
+          />
 
           {/* Copyright */}
-          <p className="text-sm sm:text-base lg:text-[16px] font-normal leading-[19px] text-center capitalize text-[#ffffff] font-helvetica">
+          <motion.p 
+            className="text-sm sm:text-base lg:text-[16px] font-normal leading-[19px] text-center capitalize text-[#ffffff] font-helvetica"
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 50,
+                  damping: 15,
+                  delay: 0.4
+                }
+              }
+            }}
+          >
             © 2025 Corplanta, All rights reserved
-          </p>
-        </div>
-      </div>
-    </footer>
+          </motion.p>
+        </motion.div>
+      </motion.div>
+    </motion.footer>
   );
 };
 
